@@ -1,39 +1,95 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ru">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Stellar Flows: цветы для ярких звездочек</title>
-    <meta
-      name="description"
-      content="Stellar Flows: интернет-магазин эстетичных авторских букетов"
-    />
-    <link rel="stylesheet" href="css/style.css" />
-  </head>
-  <body>
-    <header class="header">
-      <!-- <a href="#" class="logo">&#10034; Stellar Flows</a> -->
-      <nav class="nav">
-        <a href="#catalog">Каталог</a>
-        <a href="#cart">Корзина (<span id="cart-count">0</span>)</a>
-      </nav>
-    </header>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stellar Flows: цветы для ярких звездочек</title>
+  <meta name="description" content="Stellar Flows: интернет-магазин эстетичных авторских букетов">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="header">
+    <a href="#" class="logo">&#10034; Stellar Flows</a>
+    <nav class="nav">
+      <a href="#catalog">Каталог</a>
+      <a href="#cart">Корзина (<span id="cart-count">0</span>)</a>
+    </nav>
+  </header>
 
-    <main class="layout">
-      <section id="catalog" class="catalog" aria-labelledby="catalog-title">
-        <h1 id="catalog-title">Каталог букетов</h1>
-        <ul class="products" id="products">
-          <!-- карточки -->
-        </ul>
-      </section>
+  <main class="layout">
+    <section id="catalog" class="catalog" aria-labelledby="catalog-title">
+      <h1 id="catalog-title">Каталог букетов</h1>
+      <ul class="products" id="products">
+        <li>
+          <article class="card">
+            <img class="card__img" src="images/pinkish.jpg" alt="Букет из разнообразия розовых цветов" width="430" height="400" loading="lazy">
+            <div class="card__body">
+              <h2 class="card__title">Кассиопея</h2>
+              <p class="card__price">4 500 ₽</p>
+              <button class="btn" type="button" data-id="1">Добавить в корзину</button>
+            </div>
+          </article>
+        </li>
+        <li>
+          <article class="card">
+            <img class="card__img" src="images/pastel.jpg" alt="Пастельный букет" width="430" height="400" loading="lazy">
+            <div class="card__body">
+              <h2 class="card__title">Живописец</h2>
+              <p class="card__price">4 200 ₽</p>
+              <button class="btn" type="button" data-id="2">Добавить в корзину</button>
+            </div>
+          </article>
+        </li>
+        <li>
+          <article class="card">
+            <img class="card__img" src="images/blue.jpg" alt="Букет из разнообразия голубых цветов" width="430" height="400" loading="lazy">
+            <div class="card__body">
+              <h2 class="card__title">Северная корона</h2>
+              <p class="card__price">4 500 ₽</p>
+              <button class="btn" type="button" data-id="3">Добавить в корзину</button>
+            </div>
+          </article>
+        </li>
+        М<li>
+          <article class="card">
+            <img class="card__img" src="images/orange.jpg" alt="Теплый букет" width="430" height="400" loading="lazy">
+            <div class="card__body">
+              <h2 class="card__title">Райская птица</h2>
+              <p class="card__price">3 800 ₽</p>
+              <button class="btn" type="button" data-id="4">Добавить в корзину</button>
+            </div>
+          </article>
+        </li>
+        <li>
+          <article class="card">
+            <img class="card__img" src="images/pink.jpg" alt="Нежный букет" width="430" height="400" loading="lazy">
+            <div class="card__body">
+              <h2 class="card__title">Андромеда</h2>
+              <p class="card__price">4 000 ₽</p>
+              <button class="btn" type="button" data-id="5">Добавить в корзину</button>
+            </div>
+          </article>
+        </li>
+        <li>
+          <article class="card">
+            <img class="card__img" src="images/purple.jpg" alt="Пастельный букет" width="430" height="400" loading="lazy">
+            <div class="card__body">
+              <h2 class="card__title">Южная корона</h2>
+              <p class="card__price">4 500 ₽</p>
+              <button class="btn" type="button" data-id="6">Добавить в корзину</button>
+            </div>
+          </article>
+        </li>
+      </ul>
+    </section>
 
-      <aside id="cart" class="cart" aria-labelledby="cart-title">
-        <!-- корзина -->
-      </aside>
-    </main>
+    <aside id="cart" class="cart" aria-labelledby="cart-title">
+      <!-- корзина -->
+    </aside>
+  </main>
 
-    <footer class="footer">
-      <p>© 2026 Stellar Flows.</p>
-    </footer>
-  </body>
+  <footer class="footer">
+    <p>© 2026 Stellar Flows.</p>
+  </footer>
+</body>
 </html>
