@@ -84,12 +84,41 @@
     </section>
 
     <aside id="cart" class="cart" aria-labelledby="cart-title">
-      <!-- корзина -->
+      <h2 id="cart-title">Корзина</h2>
+      <p id="cart-empty" class="cart__empty">Корзина пуста</p>
+      <ul id="cart-items" class="cart__list"></ul>
+      <p class="cart__total">Итого: <output id="cart-total">0 ₽</output></p>
+      <button id="checkout-btn" class="btn btn--primary" type="button" disabled>Оформить заказ</button>
     </aside>
   </main>
 
   <footer class="footer">
     <p>© 2026 Stellar Flows.</p>
   </footer>
+
+  <dialog id="order-dialog" class="dialog" aria-labelledby="order-title">
+    <form id="order-form" class="form">
+      <h2 id="order-title">Оформление заказа</h2>
+      
+      <label for="first-name">Имя</label>
+      <input id="first-name" name="firstName" type="text" required autocomplete="given-name">
+      
+      <label for="last-name">Фамилия</label>
+      <input id="last-name" name="lastName" type="text" required autocomplete="family-name">
+
+      <label for="address">Адрес доставки</label>
+      <input id="address" name="address" type="text" required autocomplete="street-address">
+
+      <label for="phone">Контактный номер телефона</label>
+      <input id="phone" name="phone" type="tel" required
+           pattern="[+]?[0-9\s\-()]{10,18}" placeholder="+7 900 000-00-00" autocomplete="tel">
+           <div class="form__actions">
+            <button type="button" class="btn" id="order-cancel">Отмена</button>
+            <button type="submit" class="btn btn--primary">Создать заказ</button>
+          </div>
+        </form>
+      </dialog>
+
+<div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
 </body>
 </html>
