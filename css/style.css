@@ -102,3 +102,18 @@ img { max-width: 100%; display: block; }
 .btn:disabled { opacity: 0.5; cursor: not-allowed; }
 .btn:focus-visible { outline: 3px solid #f783ac; outline-offset: 2px; }
 
+@media (max-width: 1024px) {
+  .layout { grid-template-columns: 1fr; }
+  .cart { position: static; }
+}
+
+@media (max-width: 600px) {
+  .layout { padding: 12px; }
+  .header { padding: 12px; }
+  .products { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .dialog { width: calc(100% - 24px); }
+  .form__actions { flex-direction: column; }
+}
+@media (max-width: 380px) {
+  .products { grid-template-columns: 1fr; }
+}
