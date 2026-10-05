@@ -1,0 +1,104 @@
+:root {
+  --color-bg: #fdf8f5;
+  --color-surface: #ffffff;
+  --color-text: #2b2b2b;
+  --color-muted: #6b6b6b;
+  --color-accent: #d6336c;
+  --color-accent-dark: #a61e4d;
+  --color-border: #eadfd8;
+  --radius: 14px;
+  --shadow: 0 4px 16px rgba(0, 0, 0, 0.07);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* отступы по бокам такие, чтобы логотип и меню совпали с границами контента (max-width 1200px + padding 24px) */
+  padding: 16px max(24px, calc((100% - 1200px) / 2 + 24px));
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.logo {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.nav {
+  display: flex;
+  gap: 24px;
+}
+
+.nav a {
+  color: var(--color-text);
+  text-decoration: none;
+  font-weight: 500;
+  padding: 6px 0;
+  border-bottom: 2px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.nav a:hover {
+  color: var(--color-accent);
+  border-bottom-color: var(--color-accent);
+}
+
+.nav a:focus-visible,
+.logo:focus-visible {
+  outline: 3px solid #f783ac;
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: "Inter", system-ui, sans-serif;
+  background: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.5;
+}
+img { max-width: 100%; display: block; }
+
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px;
+  align-items: start;
+}
+.products {
+  list-style: none; margin: 0; padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+}
+.card {
+  display: flex; flex-direction: column; height: 100%;
+  background: var(--color-surface); border-radius: var(--radius);
+  box-shadow: var(--shadow); overflow: hidden;
+}
+.card__img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+.card__body { display: flex; flex-direction: column; gap: 8px; padding: 16px; flex: 1; }
+.card__price { font-weight: 700; color: var(--color-accent); margin: 0; }
+.card .btn { margin-top: auto; }
+
+.btn {
+  padding: 10px 16px; border: 1px solid var(--color-accent);
+  border-radius: 10px; background: transparent; color: var(--color-accent);
+  font: inherit; font-weight: 600; cursor: pointer; transition: 0.2s;
+}
+.btn:hover { background: var(--color-accent); color: #fff; }
+.btn--primary { background: var(--color-accent); color: #fff; }
+.btn--primary:hover { background: var(--color-accent-dark); }
+.btn:disabled { opacity: 0.5; cursor: not-allowed; }
+.btn:focus-visible { outline: 3px solid #f783ac; outline-offset: 2px; }
+
