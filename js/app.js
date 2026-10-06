@@ -123,3 +123,31 @@ function update() {
 cart = loadCart();  
 renderCart();
 
+const dialog = document.getElementById("order-dialog");
+const form = document.getElementById("order-form");
+
+checkoutBtn.addEventListener("click", () => dialog.showModal());
+document.getElementById("order-cancel").addEventListener("click", () => dialog.close());
+
+dialog.addEventListener("click", (e) => {
+  if (e.target === dialog) dialog.close();
+});
+
+const toast = document.getElementById("toast");
+let toastTimer;
+
+function showToast(text) {
+  toast.textContent = text;
+  toast.hidden = false;
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => (toast.hidden = true), 4000);
+}
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  cart = [];
+  update();   
+  form.reset();
+  dialog.close();
+  showToast("Заказ создан!");
+});
