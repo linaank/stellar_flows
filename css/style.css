@@ -268,3 +268,94 @@ img { max-width: 100%; display: block; }
 }
 
 .cart #checkout-btn { width: 100%; }
+
+
+.dialog {
+  width: min(92vw, 460px);
+  padding: 0;
+  border: none;
+  border-radius: var(--radius);
+  background: var(--color-surface);
+  color: var(--color-text);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.dialog::backdrop {
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(2px);
+}
+
+.dialog[open] {
+  animation: dialog-in 0.25s ease;
+}
+
+@keyframes dialog-in {
+  from { opacity: 0; transform: translateY(12px) scale(0.98); }
+  to   { opacity: 1; transform: none; }
+}
+
+body:has(.dialog[open]) { overflow: hidden; }
+
+.form {
+  display: grid;
+  gap: 6px;
+  padding: 28px;
+}
+
+.form h2 {
+  margin: 0 0 12px;
+  font-size: 1.4rem;
+}
+
+.form label {
+  margin-top: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.form input {
+  width: 100%;
+  padding: 11px 14px;
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font: inherit;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form input::placeholder { color: #a8a0a0; }
+
+.form input:focus {
+  outline: none;
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px rgba(214, 51, 108, 0.2);
+}
+
+.form input:user-invalid {
+  border-color: #e03131;
+}
+
+.form__actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+/* ===== Сообщение «Заказ создан!» ===== */
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: 24px;
+  z-index: 100;
+  transform: translateX(-50%);
+  max-width: calc(100% - 32px);
+  padding: 14px 24px;
+  border-radius: 12px;
+  background: var(--color-text);
+  color: #fff;
+  font-weight: 600;
+  text-align: center;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
