@@ -98,3 +98,27 @@ cartItemsEl.addEventListener("click", (e) => {
   if (action === "dec") changeQty(id, -1);
   if (action === "remove") removeFromCart(id);
 });
+
+const CART_KEY = "flora-cart";
+
+function loadCart() {
+  try {
+    const data = JSON.parse(localStorage.getItem(CART_KEY));
+    if (!Array.isArray(data)) return [];
+    return data.filter((i) => getProduct(i.id) && Number.isInteger(i.qty) && i.qty > 0);
+  } catch {
+    return [];
+  }
+}
+
+function saveCart() {
+  localStorage.setItem(CART_KEY, JSON.stringify(cart));
+}
+
+function update() {
+  saveCart();
+  renderCart();
+}
+
+cart = loadCart();  
+renderCart();
