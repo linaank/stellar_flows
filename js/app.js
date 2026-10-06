@@ -99,7 +99,7 @@ cartItemsEl.addEventListener("click", (e) => {
   if (action === "remove") removeFromCart(id);
 });
 
-const CART_KEY = "flora-cart";
+const CART_KEY = "stellar-cart";
 
 function loadCart() {
   try {
@@ -122,3 +122,4 @@ function update() {
 
 cart = loadCart();  
 renderCart();
+
