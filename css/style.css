@@ -123,6 +123,9 @@ img { max-width: 100%; display: block; }
   .products { grid-template-columns: repeat(2, 1fr); gap: 12px; }
   .dialog { width: calc(100% - 24px); }
   .form__actions { flex-direction: column; }
+  .form { padding: 20px; }
+  .form__actions { flex-direction: column-reverse; }
+  .form__actions .btn { width: 100%; }
 }
 @media (max-width: 380px) {
   .products { grid-template-columns: 1fr; }
@@ -343,7 +346,6 @@ body:has(.dialog[open]) { overflow: hidden; }
   margin-top: 20px;
 }
 
-/* ===== Сообщение «Заказ создан!» ===== */
 .toast {
   position: fixed;
   left: 50%;
